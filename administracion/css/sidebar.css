@@ -1,0 +1,23 @@
+
+.sidebar__content{
+    flex-direction: column;
+    display: flex;
+}
+
+.sidebar__content form button{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.sidebar__content form button svg{
+    width: 50px;
+}
+
+.sidebar__content form button:hover{
+    background: var(--backgroumd);
+    color: #fff;
+}
+
+.sidebar__content form button:hover path{
+    fill: #fff;
+}

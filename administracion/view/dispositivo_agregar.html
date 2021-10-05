@@ -1,0 +1,64 @@
+<style type="text/css">
+  .col-lg-3 {
+    display: none !important;
+  }
+</style>
+
+<!-- <div class="container__agregar"> -->
+<div class="container__agregar">
+  <div class="content__form">
+    <div class="mt-3 fw-bold text-center">Registrar Dispositivo</div>
+
+    <div class="container__form__dispositivo">
+      <form method="post" action="index.php?vista=dispositivo">
+        <div>FORMULARIO</div>
+        <label
+          >ID
+          <input
+            placeholder="ingrese el ID"
+            type="text"
+            class="input__form"
+            name="id"
+          />
+        </label>
+        <label
+          >PAC
+          <input
+            placeholder="ingrese el PAC"
+            type="text"
+            class="input__form"
+            name="pac"
+          />
+        </label>
+        <label
+          >Estado
+          <input type="checkbox" class="input__form" name="estado" />
+        </label>
+        <div class="content__button">
+          <input
+            type="submit"
+            class="btn btn-primary"
+            value="Guardar"
+            name="Guardar"
+          />
+          <input
+            type="submit"
+            class="btn btn-secondary"
+            value="Regresar"
+            name="Regresar"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- </div> -->
+  <script type="text/javascript">
+    function goBack() {
+      window.history.back();
+    }
+    $(document).ready(function () {
+      $(".toast").toast("show");
+    });
+  </script>
+  <script src="./js/main.js"></script>
+</div>

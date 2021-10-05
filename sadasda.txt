@@ -1,0 +1,85 @@
+<div class="col-lg-9">
+    <div class="container">
+        <?php // print_r($_SESSION); ?>
+        <?php if(isset($_SESSION["estado"]) && $_SESSION["mensaje"]): ?>
+        <div class="row">
+            <div class="col-12 p-0">
+                <div class="toast-container">
+                    <div class="toast fade show" role="alert" aria-live="assertive" aria-atomic="true">
+                        <div class="toast-header">
+                            <img src="../resources/iconos/nombre_icono.png" class="rounded me-2" alt="...">
+                            <strong class="me-auto">Mensaje</strong>
+                            <button type="button" id="myToast" class="btn-close" data-bs-dismiss="toast"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="toast-body">
+                            <?php echo $_SESSION["mensaje"]; ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php unset($_SESSION["estado"], $_SESSION["mensaje"]); ?>
+        <?php endif; ?>
+
+        <div class="row actions-gestion">
+            <div class="d-flex align-items-start">
+                <div class="content__buttons__usuarios" >
+                    <div class="nav flex-column nav-pills me-5" 
+                        aria-orientation="horizontal">
+                        <a class="nav-link" id="v-pills-home-tab" data-bs-toggle="pill" href="#v-pills-home" role="tab"
+                            aria-controls="v-pills-home" aria-selected="true">Nuevo usuario</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" href="#v-pills-profile"
+                            role="tab" aria-controls="v-pills-profile" aria-selected="false">Cambiar contraseña</a>
+                    </div>
+                </div>
+
+                <div class="row row-form-content">
+                    <div class="col-12">
+                        <div class="tab-content" id="v-pills-tabContent">
+                            <div class="tab-pane fade show" id="v-pills-home" role="tabpanel">
+                                <br>
+                                
+
+                            </div>
+                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                aria-labelledby="v-pills-profile-tab">
+                                <br>
+                                <div class="card text-dark bg-light mb-3" style="width: 40rem;">
+                                    <div class="card-header fw-bold text-center">Verificar Usuario</div>
+
+
+                                    <form action="?vista=usuarios" method="POST">
+                                        <div class="m-auto" style="width: 80%;">
+                                            <br>
+                                            <span">Ingrese el Usuario del Trabajador*</span><br><br>
+                                                <span class="bold">Usuario:</span>
+                                                <input type="text" name="usuario" value="" autofocus="" class="form-control"
+                                                    style="display: inline;" required>
+                                                <div class="form-row mt-3 d-flex justify-content-center">
+                                                    <button type="submit" name="verificar_usuario"
+                                                        class="btn btn-primary">Verificar</button>
+                                                </div><br>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+
+    $(document).ready(function () {
+        $('.toast').toast('show');
+    });
+
+</script>
+</div>

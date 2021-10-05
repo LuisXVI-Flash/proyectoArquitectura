@@ -1,0 +1,66 @@
+
+<div class="col-lg-9">
+  <div class="container" style="max-width: 500px;">
+    <br />
+    <div class="card text-dark bg-light mb-3" >
+      <div class="card-header fw-bold text-center">
+        Recuperación de Contraseña
+      </div>
+      <form action="?vista=usuarios" method="POST">
+        <div class="m-auto" style="width: 80%">
+          <div>
+            <span class="bold">Usuario:</span>
+            <span>
+              <?php echo isset($_SESSION["usuario"]) ? $_SESSION["usuario"] : ""; ?>
+            </span>
+          </div>
+
+          <br />
+          <span class="bold">Contraseña:</span>
+          <input
+            type="password"
+            name="contrasenia_1"
+            value=""
+            class="form-control"
+            style="display: inline"
+            required
+          />
+          <br />
+          <span class="bold">Confirmar Contraseña:</span>
+          <input
+            type="password"
+            name="contrasenia_2"
+            value=""
+            class="form-control"
+            style="display: inline"
+            required
+          />
+          <input
+            type="hidden"
+            name="usuario"
+            value="<?php echo isset($_SESSION['usuario']) ? $_SESSION['usuario'] : '' ;
+                        ?>"
+          />
+
+          <div class="form-row mt-3 d-flex justify-content-center">
+            <span
+              type="button"
+              class="btn btn-secondary me-md-2"
+              onclick="goBack()"
+              >Volver Atrás</span
+            >
+            <button
+              type="submit"
+              name="contrasenia_usuario"
+              class="btn btn-primary"
+            >
+              Cambiar contraseña
+            </button>
+          </div>
+          <br />
+        </div>
+      </form>
+    </div>
+  </div>
+ 
+</div>

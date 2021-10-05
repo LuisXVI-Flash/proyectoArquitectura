@@ -1,0 +1,39 @@
+<div class="container container__cliente">
+  <form
+    action="?vista=dispositivo&id=<?php echo $dispositivo['idproducto']?>"
+    method="POST"
+  >
+    <label class="form-label">Id dispositivo: </label>
+    <input
+      class="form-control"
+      type="text"
+      name="idproducto"
+      value="<?php echo $dispositivo['id'] ?>"
+    /><br />
+
+    <label class="form-label">Pack: </label>
+    <input
+      class="form-control"
+      type="text"
+      name="pac"
+      value="<?php echo $dispositivo['pac'] ?>"
+    /><br />
+
+    <label class="form-label">Estado: </label>
+    <input
+      class="form-control"
+      type="text"
+      name="estado"
+      value="<?php echo $dispositivo['estado'] ?>"
+    /><br />
+
+    <br />
+
+    <input
+      class="btn btn-primary"
+      type="submit"
+      name="actualizar"
+      value="GUARDAR"
+    /><br />
+  </form>
+</div>

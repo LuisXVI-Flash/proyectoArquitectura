@@ -1,0 +1,111 @@
+<div class="contenedor" id="contenedor">
+  <button onclick="cambiar(1)" class="btn btn-primary">Agregar Usuario</button>
+  <br>
+  <button onclick="cambiar(2)" class="btn btn-primary">Cambiar Contraseña</button>
+</div>
+
+<style>
+  #contenedor {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+  }
+</style>
+<script>
+  function cambiar(valor) {
+    if (valor == 1) {
+      document.getElementById("contenedor").innerHTML = `
+            <div class="card text-dark bg-light mb-3" ">
+                                    <div class="card-header fw-bold text-center">Registrar Usuario</div>
+                                    <form action="?vista=usuarios" method="POST" class="w-100">
+
+                                        <div class="card-body m-auto" style="width: 80%;">
+                                            <div class="form-row d-flex mt-3">
+                                                <span class="col-2 bold">Cargo:</span>
+                                                <div class="col-10 ml-auto" style="text-align: left;">
+                                                    <input type="radio" id="check1" name="cargo" value="1" checked>
+                                                    <label for="check1">Administrador de datos</label>
+                                                    <br>
+                                                    <input type="radio" id="check2" name="cargo" value="2">
+                                                    <label for="check2">           Back Auditor</label>
+                                                    <br>
+                                                    <input type="radio" id="check3" name="cargo" value="3">
+                                                    <label for="check3">Administrador del Sistema</label>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <span class="bold">Nombres:</span>
+                                            <input type="text" name="nombre" value="" class="form-control"
+                                                style="display: inline;" required>
+                                            <br>
+                                            <span class="bold">Apellidos:</span>
+                                            <input type="text" name="apellido" value="" class="form-control"
+                                                style="display: inline;" required>
+                                            <br>
+                                            <span class="bold">Usuario:</span>
+                                            <input type="text" name="user_nick" value="" class="form-control"
+                                                style="display: inline;" required>
+                                            <br>
+                                            <span class="bold">Contraseña:</span>
+                                            <input type="password" name="contrasenia_1" value="" class="form-control"
+                                                style="display: inline;" required>
+                                            <br>
+                                            <span class="bold">Confirmar Contraseña:</span>
+                                            <input type="password" name="contrasenia_2" value="" class="form-control"
+                                                style="display: inline;" required>
+                                            <br>
+
+                                            <span class="bold">Email:</span>
+                                            <input type="email" name="email" value="" class="form-control"
+                                                style="display: inline;" required>
+                                            <br>
+                                        </div>
+
+                                        <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                                            <button type="button" class="btn btn-secondary me-md-2"
+                                                onclick="cambiar(3)">Volver Atrás</button>
+                                            <button type="submit" name="guardar_usuario"
+                                                class="btn btn-primary">Registrar</button>
+                                        </div><br>
+                                    </form>
+                                </div>
+            `;
+    }
+    if (valor == 2) {
+      document.getElementById("contenedor").innerHTML = ` 
+            <div class="card text-dark bg-light mb-3" ">
+                                    <div class="card-header fw-bold text-center">Verificar Usuario</div>
+
+
+                                    <form action="?vista=usuarios" method="POST">
+                                        <div class="m-auto" style="width: 80%;">
+                                            <br>
+                                            <span">Ingrese el Usuario del Trabajador*</span><br><br>
+                                                <span class="bold">Usuario:</span>
+                                                <input type="text" name="usuario" value="" autofocus="" class="form-control"
+                                                    style="display: inline;" required>
+                                                <div class="form-row mt-3 d-flex justify-content-center">
+                                                    <button type="button" class="btn btn-secondary me-md-2"
+                                                onclick="cambiar(3)">Volver Atrás</button>
+                                                    <button type="submit" name="verificar_usuario"
+                                                        class="btn btn-primary">Verificar</button>
+                                                </div><br>
+                                        </div>
+                                    </form>
+                                </div>
+                                </div>
+            `;
+    }
+    if (valor == 3) {
+      document.getElementById(
+        "contenedor"
+      ).innerHTML = `<button onclick="cambiar(1)" class="btn btn-primary">Agregar Usuario</button>
+  <br>
+  <button onclick="cambiar(2)" class="btn btn-primary">Cambiar Contraseña</button>`;
+    }
+  }
+</script>

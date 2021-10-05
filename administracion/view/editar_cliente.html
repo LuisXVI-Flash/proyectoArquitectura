@@ -1,0 +1,58 @@
+<div class="container__cliente">
+  <h2>Cliente</h2>
+  <form
+    action="index.php?vista=cliente"
+    method="POST"
+    class="container_formulario"
+  >
+    <label>id cliente: </label>
+    <input
+      type="text"
+      name="idcliente"
+      value="<?php echo $cliente['idcliente'] ?>"
+    />
+    <br />
+
+    <label>nombres: </label>
+    <input
+      type="text"
+      name="nombres"
+      value="<?php echo $cliente['nombres'] ?>"
+    />
+    <br />
+
+    <label>apellidos: </label>
+    <input
+      type="text"
+      name="apellidos"
+      value="<?php echo $cliente['apellidos'] ?>"
+    />
+    <br />
+
+    <label>correo: </label>
+    <input type="text" name="correo" value="<?php echo $cliente['correo'] ?>" />
+    <br />
+
+    <label>dni: </label>
+    <input type="text" name="dni" value="<?php echo $cliente['dni'] ?>" />
+    <br />
+
+    <label>celular: </label>
+    <input
+      type="text"
+      name="celular"
+      value="<?php echo $cliente['celular'] ?>"
+    />
+    <br />
+
+    <br />
+
+    <input
+      type="submit"
+      name="test"
+      class="btn btn-secondary"
+      value="GUARDAR"
+    />
+    <br />
+  </form>
+</div>

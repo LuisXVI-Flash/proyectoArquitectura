@@ -1,0 +1,75 @@
+<div class="container__grid">
+  <br />
+  <h4 style="text-align: center" class="card-title">Lista de No Atendidos</h4>
+  <br /><br />
+  <div class="container__title">
+    <h4>Ultimos Atendidos:</h4>
+  </div>
+  <div class="container__atendidos__cards">
+    <template id="card">
+      <div class="card__atendido">
+        <h3>Juan</h3>
+        <h4>20-06-2020</h4>
+      </div>
+    </template>
+  </div>
+  <div class="container__atendidos"></div>
+  <div class="content__table__atendidos">
+    <table class="table table-hover my-4" id="noatendidos" style="width: 90%">
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>Pac</td>
+          <td>Fecha</td>
+          <td>Cliente</td>
+          <td>Acciones</td>
+        </tr>
+      </thead>
+
+      <tbody id="tbody" class="list"></tbody>
+      <tfoot>
+        <tr>
+          <th>id</th>
+          <th>dispositivo</th>
+          <th>fecha</th>
+          <th>cliente</th>
+        </tr>
+      </tfoot>
+    </table>
+
+    <template id="template-table-atendido">
+      <tr class="trow">
+        <td class="my-2" id="id" name="id"></td>
+        <td class="my-2" id="pac" name="pack"></td>
+        <td class="my-2" id="fecha" name="fecha"></td>
+        <td class="my-2" id="name" name="name"></td>
+        <td class="my-2"></td>
+        <td
+          class="my-2"
+          style="display: flex; flex-direction: row; padding: 10px"
+        >
+          <a href="" id="editar" class="btn btn-primary mx-2 my-2 btn__action"
+            >Atendido</a
+          >
+        </td>
+      </tr>
+    </template>
+  </div>
+
+  <div id="datos"></div>
+  <nav aria-label="Page navigation example">
+    <ul
+      class="pagination justify-content-center pagenumbers"
+      id="pagination"
+    ></ul>
+  </nav>
+</div>
+<script type="text/javascript">
+  function goBack() {
+    window.history.back();
+  }
+  $(document).ready(function () {
+    $(".toast").toast("show");
+  });
+</script>
+<script src="./js/searchAten.js"></script>

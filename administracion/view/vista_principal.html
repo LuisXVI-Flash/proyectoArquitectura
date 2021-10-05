@@ -1,0 +1,80 @@
+
+        <div class="sidebar__content" id="sidebar">
+        <?php
+
+        if ($_SESSION['idcargo'] == 1) {
+        ?>
+        <br><br>  <a class="nav-link disabled" href="#"><h6>GENERAL</h6></a>
+            <a href="index.php"><button class="btn btn-link btn__sidebar" name="listar" type="submit"><h6>Dashboard</h6></button></a>
+        <?php } ?>
+        <?php
+        if ($_SESSION['idcargo'] == 1 || $_SESSION['idcargo'] == 2 || $_SESSION['idcargo'] == 3) {
+        ?>
+          <a class="nav-link disabled" href="#"><h6>GESTIÓN</h6></a>
+
+        <?php } ?>
+        <?php
+        if ($_SESSION['idcargo'] == 1 || $_SESSION['idcargo'] == 2) { ?>
+
+           
+            <form action="?vista=cliente" method="POST">
+            <button class="btn btn-link" type="submit" name="listar">
+                <img src="./assets/icons/clarity_users-solid.svg" alt="cliente">
+                <h6>Clientes</h6>
+            </button>
+            </form>
+        <?php }
+        if($_SESSION['idcargo']==1 || $_SESSION['idcargo']==3){   
+            ?>
+             <form method="POST" action="?vista=dispositivo">
+                <button class="btn btn-link" name="Listar" id="Listar">
+                    <img src="./assets/icons/carbon_iot-platform.svg" alt="dispositivo">
+                    <h6>Dispositivos</h6>
+                </button>
+            </form>
+            
+        <?php }
+        if($_SESSION['idcargo']==1 || $_SESSION['idcargo']==3){   
+            ?>
+            <a class="nav-link disabled" href="#"><h6>SOLICITUDES</h6></a>
+             <form method="POST" action="?vista=atendidos">
+                <button class="btn btn-link" name="Listar" id="Listar">
+                <img src="./assets/icons/carbon_document.svg" alt="dispositivo">
+                <h6>
+                    General
+                </h6>
+                </button>
+            </form>
+             <form method="POST" action="?vista=pedidos">
+                <button class="btn btn-link btn__sidebar" name="Listar" id="Listar">
+                <img src="./assets/icons/carbon_document-tasks.svg" alt="dispositivo">
+                <h6>
+                   Atendidos
+                </h6>
+                </button>
+            </form>
+             <form method="POST" action="?vista=atendidos2">
+                    <button class="btn btn-link btn__sidebar" name="Listar" id="Listar">
+                        <img src="./assets/icons/carbon_document-subtract.svg" alt="dispositivo">
+                <h6>
+                    No Atendidos
+                </h6>
+                </button>
+            </form>
+            <form method="POST" action="?vista=usuarios">
+            <a class="nav-link disabled" href="#"><h6>CONFIGURACIÓN</h6></a>
+            <button class="btn btn-link btn__sidebar" name="agregar" id="Listar">
+                <img src="./assets/icons/fluent_person-settings-20-filled.svg" alt="dispositivo">
+                <h6>
+                    Usuarios
+                </h6>
+            </button>
+     </form>
+
+ </form>
+
+            
+        <?php }
+        ?>
+        </div>
+

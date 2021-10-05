@@ -1,0 +1,468 @@
+@import url("sidebar.css");
+* {
+  /* Custom Propertys */
+  --backgroumd:rgb(100, 146, 255);
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  }
+
+  :root{
+    --color-primary:#008AFC;
+    --color-secondary:#003862;
+  }
+  
+  *:focus {
+      outline: none;
+  }
+  body {
+  font-family: Arial;
+  height: 100%;
+  width: 100%;
+  /* overflow-x: hidden */
+  }
+
+@import url('../css/gestionarDispositivo.css');
+@import url('../css/sidebar.css');
+/* Sidebar */
+.sidebar__content{
+top: 96px;
+left: 0;
+background: #F0F0F0;
+width: 250px;
+min-height: 92.1vh;
+transform: translate(0px);
+transition: transform 0.8s ease,display 0.3s ease;
+transition: margin 0.3s ease;
+}
+
+/* Navbar */
+
+.btn_toggle{
+background: transparent;
+outline: none;
+border: none;
+color: #fff;
+font-size: 30px;
+}
+
+
+.btn_toggle:focus{
+outline: none;
+}
+
+.btn_toggle:hover{
+color: rgb(224, 224, 224);
+}
+
+.btn-link img{
+  padding-right: 10px;
+}
+
+.btn-link, .btn-link:hover, .btn-link:active, .btn-link:visited {
+  text-decoration:none;
+}
+.btn-primary{
+ background: var(--color-primary);
+ border:none;
+ border-radius: 18px;
+ padding: 8px 10px;
+}
+
+.btn-primary:active{
+  background: #003862;
+}
+
+.btn-secondary{
+  border-radius: 18px;
+ padding: 8px 10px;
+  background: var(--color-secondary);
+}
+
+.content__image{
+  background: var(--color-secondary);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+/* acciones */
+
+.active{
+margin-left: -250px;
+}
+
+
+.container__agregar{
+width: 100vw;
+margin: 0;
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.container__cliente{
+width: 100%;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+
+.container__dispositivo{
+display: flex;
+justify-content: flex-start;
+flex-direction: row;
+}
+
+
+.container__grid1{
+  width: 100%;
+}
+.container__grid{
+width: 100%;
+}
+
+/* tabla responsiva */
+
+.content__table{
+display: flex;
+justify-content: center;
+}
+.table__products{
+width: 80%;
+background:#fff;
+border-collapse: collapse;
+border-radius: 20px;
+}
+
+.table__products tbody td, th { 
+padding: 10px; 
+text-align: left; 
+}
+
+.table__products tbody tr img{
+height: 150px;
+width: 100px;
+}
+
+
+.table__products tbody td button{
+width: 5rem;
+margin-top: 5px;
+padding: 5px 10px;
+border: none;
+border-radius: 10px;
+color: #fff;
+display: flex;
+justify-content: space-around;
+border: solid transparent 1px ;
+}
+
+
+@media only screen and (max-width: 1024px)  {
+
+/* Force table to not be like tables anymore */
+table, thead, tbody, th, td, tr { 
+display: block; 
+}
+
+/* Hide table headers (but not display: none;, for accessibility) */
+.table__products thead tr { 
+position: absolute;
+top: -9999px;
+left: -9999px;
+}
+
+.table__products tr{ 
+    border: 1px solid rgb(238, 238, 238); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 30%; 
+}
+
+.table__products td { 
+/* Behave  like a "row" */
+border: none;
+border-bottom: 1px solid rgb(238, 238, 238); 
+position: relative;
+    width: calc(100% - 5vw);
+}
+
+.table__products td:before { 
+/* Now like a table header */
+position: absolute;
+/* Top/left values mimic padding */
+top: 6px;
+left: -100px;
+width: 45%; 
+padding-right: 10px; 
+    display: block;
+white-space: nowrap;
+    font-weight: 700;
+}
+
+/*
+Label the data
+*/
+.table__products td:nth-of-type(1):before { content: "idcliente"; }
+.table__products td:nth-of-type(2):before { content: "Nombre"; }
+.table__products td:nth-of-type(3):before { content: "Apellidos"; }
+.table__products td:nth-of-type(4):before { content: "Correo"; }
+.table__products td:nth-of-type(5):before { content: "Dni"; }
+.table__products td:nth-of-type(6):before { content: "Celular"; }
+.table__products td:nth-of-type(7):before { content: "Acciones"; }
+
+
+.table__dispositivo thead tr { 
+position: absolute;
+top: -9999px;
+left: -9999px;
+}
+
+.table__dispositivo tr{ 
+    border: 1px solid rgb(238, 238, 238); 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 30%; 
+}
+
+.table__dispositivo td { 
+/* Behave  like a "row" */
+border: none;
+border-bottom: 1px solid rgb(238, 238, 238); 
+position: relative;
+width: calc(100% - 5vw);
+}
+
+.table__dispositivo td:before { 
+/* Now like a table header */
+position: absolute;
+/* Top/left values mimic padding */
+top: 6px;
+left: -100px;
+width: 45%; 
+padding-right: 10px; 
+    display: block;
+white-space: nowrap;
+    font-weight: 700;
+}
+
+.table__dispositivo td:nth-of-type(1):before { content: "ID"; }
+.table__dispositivo td:nth-of-type(2):before { content: "PAC"; }
+.table__dispositivo td:nth-of-type(3):before { content: "ESTADO"; }
+.table__dispositivo td:nth-of-type(4):before { content: "ACCIONES"; }
+
+}
+
+table .content__btn{
+display: flex;
+flex-direction: row;
+}
+
+/* Estilos formulario */
+
+.container__form{
+display: flex;
+width: 100%;
+flex-direction: column;
+justify-content: center;
+}
+
+.container__form form{
+display: flex;
+justify-content: center;
+}
+/* formulario */
+.formulario__inputs{
+display: flex;
+justify-content: space-around;
+}
+
+.btns-gestionar{
+display: flex;
+justify-content: center;
+flex-direction: column;
+background: #F0F0F0;
+border-radius: 10px;
+box-shadow: 10px 10px 30px rgba(58, 58, 58, 0.582);
+}
+
+@media (max-width: 610px){
+.nav__name{
+  font-size: 15px;
+}  
+
+.sidebar__content{
+  top: 130px;
+  left: 0;
+}
+}
+
+@media (max-width: 371px){
+.sidebar__content{
+  top: 170px;
+  left: 0;
+}
+
+}
+
+/* ===Navbar ===*/
+.navbar{
+  background: #008AFC;
+}
+.nav-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item h6{
+  color: #fff;
+}
+
+.container__navbar{
+width: 100%;
+display: flex;
+justify-content: space-around;
+}
+
+.navitem__content{
+display: flex;
+justify-content: center;
+align-items: center;
+color: #fff;
+}
+/* formulario */
+.content__table__atendidos{
+  margin: 20px;
+  padding: 0 40px;
+}
+
+.container_formulario{
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.input__form{
+  width: 100%;
+}
+
+/* container__atendidos */
+
+.container__atendidos{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.container__atendidos select{
+  margin-right:60px;
+}
+
+.container__atendidos__cards{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.card__atendido{
+  width: 200px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-radius: 5px;
+  margin-left: 10px;
+  background: #5250F1;
+  color: #fff;
+ /* transition: background 0.3s ease, color 0.3s ease;*/
+}
+
+.card__atendido:nth-child(2){
+  background: #F9722C;
+}
+.card__atendido:nth-child(3){
+  background: #00C100;
+}
+.card__atendido:nth-child(4){
+  background: #CE426B;
+}
+
+.card__atendido:hover{
+  background: #ff6464;
+  color: #fff;
+  cursor: pointer;
+}
+
+.container__title{
+  display: flex;
+  justify-content: flex-start;
+}
+
+.container__title h4{
+  margin-left: 50px;
+}
+
+.content__title-cliente{
+  width: 80%;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding-left: 170px;
+}
+
+/* Agregar dispositivos */
+
+.content__form{
+  width: 400px;
+  height: 500px;
+  background: #F0F0F0;
+  border-radius: 10px;
+  box-shadow: 5px 10px 40px rgba(88, 88, 88, 0.767);
+}
+
+.container__form__dispositivo{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  }
+.container__form__dispositivo form{
+  display: flex;
+  width: 100%;
+  height: 80%;
+  flex-direction: column;
+  justify-content: space-around;
+  }
+
+  .container__form__dispositivo form input[type='checkbox']{
+    width: 20px;
+    height: 20px;
+    padding: 10px 0;
+  }
+  .container__form__dispositivo form .btn-primary{
+    margin: 0;
+  }
+
+  .content__button{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .content__buttons__usuarios{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }

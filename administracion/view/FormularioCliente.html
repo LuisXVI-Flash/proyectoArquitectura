@@ -1,0 +1,96 @@
+<style type="text/css">
+  .col-lg-3 {
+    display: none !important;
+  }
+</style>
+
+<div class="container__cliente">
+  <div class="btns-gestionar p-2">
+    <div class="fw-bold text-center">Registrar Cliente</div>
+    <form
+      action="index.php?vista=cliente"
+      method="POST"
+      class="container_formulario"
+    >
+      <div>
+        <label class="my-3" for="nombres">Nombres</label><br />
+        <input
+          class="input__form p-2"
+          name="nombres"
+          placeholder="Ingrese Nombre"
+          id="nombres"
+          type="text"
+          required
+          pattern="[A-Za-z ]{2,30}"
+          title="Sebe contener letras de la a-z, mayúsculas o minúsculas"
+        />
+      </div>
+      <div>
+        <label class="my-3" for="apellidos">Apellidos</label><br />
+        <input
+          class="input__form p-2"
+          name="apellidos"
+          placeholder="Ingrese Apellidos"
+          id="apellidos"
+          required
+          pattern="[A-Za-z ]{2,30}"
+          title="Debe contener letras de la a-z, mayúsculas o minúsculas"
+        />
+      </div>
+      <div>
+        <label class="my-3" for="correo">Correo</label><br />
+        <input
+          class="input__form p-2"
+          name="correo"
+          placeholder="Correo"
+          id="correo"
+          type="email"
+          required
+        />
+      </div>
+      <div>
+        <label class="my-3" for="dni">DNI</label><br />
+        <input
+          class="input__form p-2"
+          name="dni"
+          placeholder="DNI"
+          id="dni"
+          type="text"
+          minlength="8"
+          maxlength="8"
+          name="dni"
+          onkeypress="return (event.charCode >= 48 && event.charCode <= 57)"
+          required
+        />
+      </div>
+      <div>
+        <label class="my-3" for="celular">Celular</label><br />
+        <input
+          class="input__form p-2"
+          name="celular"
+          placeholder="Celular"
+          id="celular"
+          type="text"
+          required
+          pattern="[0-9]{9}"
+          title="Debe contener una cantidad de 9 números"
+        />
+      </div>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-center my-2">
+        <br />
+        <a class="btn btn-secondary" href="index.php?vista=cliente">Regresar</a>
+        <button type="submit" name="Agregar" class="btn btn-primary">
+          Agregar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<script type="text/javascript">
+  function goBack() {
+    window.history.back();
+  }
+  $(document).ready(function () {
+    $(".toast").toast("show");
+  });
+</script>
